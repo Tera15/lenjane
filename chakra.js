@@ -1,6 +1,13 @@
 import { extendTheme } from "@chakra-ui/react";
 
 const theme = extendTheme({
+  styles: {
+    global: (props) => ({
+      body: {
+        bg: "background",
+      },
+    }),
+  },
   textStyles: {
     h1: {
       fontSize: ["7xl"],
@@ -10,20 +17,32 @@ const theme = extendTheme({
     },
     h2: {
       fontSize: ["5xl"],
-      textTransform: "uppercase",
-      color: "headingText",
+      color: "subHeading",
     },
-    p: {},
+    h3: {
+      fontSize: ["4xl"],
+      color: "subHeading",
+    },
+    h4: {
+      fontSize: ["xl"],
+      color: "subHeading",
+    },
+    p: {
+      fontSize: ["lg"],
+      color: "bodyText",
+    },
     menu: {
-      fontSize: "3xl",
+      fontSize: ["3xl"],
       textTransform: "uppercase",
       color: "headingText",
+      cursor: "pointer",
     },
   },
   colors: {
     background: "#FFFBF6",
     headingText: "#292622",
-    bodyText: "554F46",
+    subHeading: "#38332E",
+    bodyText: "#655F57",
   },
   fonts: {
     body: "montserrat, sans-serif",

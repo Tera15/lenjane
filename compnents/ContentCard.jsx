@@ -1,21 +1,25 @@
-import { Center, Stack, Text } from "@chakra-ui/react";
+import { Stack, Text, Container } from "@chakra-ui/react";
 import Image from "next/image";
-import CustomButton from "./Button";
+import Link from "next/link";
 export default function ContentCard({ headband }) {
   return (
-    <Stack h="599px" w="494px" spacing={22}>
+    <Stack h="450px" w="450px" spacing={5}>
       <Image
         src={`${
           headband ? "/headbandPlacholder.jpeg" : "/scrunchydisplay.png"
         }`}
-        width={400}
-        height={600}
+        width={494}
+        height={509}
       />
-      <Center borderTop="2px solid black">
-        <Text mt={2} textStyle="menu">
-          {headband ? "Headbands" : "Scrunchies"}
-        </Text>
-      </Center>
+      <Container borderTop="2px solid black" textAlign="center">
+        <Link href={headband ? "/shop/headbands" : "/shop/scrunchies"}>
+          <a>
+            <Text mt={2} textStyle="menu">
+              {headband ? "Headbands" : "Scrunchies"}
+            </Text>
+          </a>
+        </Link>
+      </Container>
     </Stack>
   );
 }
