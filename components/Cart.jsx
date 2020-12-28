@@ -26,7 +26,15 @@ export default function ShoppingBag() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef();
   const cart = useCart();
+  console.log(cart);
   const cartItems = cart.data;
+  const cartTotal =
+    cartItems &&
+    cartItems.reduce((acc, item) => {
+      acc += item.line_total.raw;
+      return Math.floor(acc);
+    }, 0);
+
   return (
     <>
       <Button onClick={onOpen} background="transparent" fontSize={40}>
@@ -38,7 +46,7 @@ export default function ShoppingBag() {
         transform="translate(1.8rem, -1.5rem)"
         fontWeight="bold"
       >
-        1
+        {(cartItems && cartItems.length) || 0}
       </Text>
       <Drawer isOpen={isOpen} placement="right" onClose={onClose} size="full">
         <DrawerOverlay>
@@ -49,22 +57,33 @@ export default function ShoppingBag() {
             </DrawerHeader>
             <DrawerBody display="flex" flexDir="column" px={10}>
               <VStack spacing={5}>
-                <CartItem />
-                <CartItem />
-                <CartItem />
-                <CartItem />
-                <CartItem />
-                <CartItem />
-                <CartItem />
-                <CartItem />
-                <CartItem />
-                <CartItem />
+                {cart.isSuccess &&
+                  cartItems.map(
+                    ({
+                      id,
+                      name,
+                      media: { source },
+                      price: { formatted },
+                      quantity,
+                    }) => {
+                      return (
+                        <CartItem
+                          key={id}
+                          name={name}
+                          productId={id}
+                          media={source}
+                          price={formatted}
+                          bagQuantity={quantity}
+                        />
+                      );
+                    }
+                  )}
               </VStack>
             </DrawerBody>
             <Divider />
             <DrawerFooter justifyContent="center">
               <Text fontWeight="bold" mr={4}>
-                Total: $12
+                Total: ${cartTotal}
               </Text>
               <Button
                 border="solid 2px black"

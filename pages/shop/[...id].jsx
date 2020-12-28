@@ -1,4 +1,4 @@
-import ProductDescription from "../../compnents/ProductDescription";
+import ProductDescription from "../../components/ProductDescription";
 import { commerce } from "../../src/lib/commerce";
 import { useState } from "react";
 import {
@@ -15,8 +15,8 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import Image from "next/image";
-import TitleBar from "../../compnents/TitleBar";
-import CustomButton from "../../compnents/Button";
+import TitleBar from "../../components/TitleBar";
+import CustomButton from "../../components/Button";
 import useAddToCart from "../../hooks/useAddToCart";
 
 export default function ProductPage({ product }) {
@@ -52,6 +52,7 @@ export default function ProductPage({ product }) {
                 name={name}
                 price={formatted}
                 description={description}
+                id={id}
               />
             </Center>
           </Grid>

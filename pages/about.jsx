@@ -1,4 +1,4 @@
-import TitleBar from "../compnents/TitleBar";
+import TitleBar from "../components/TitleBar";
 export default function About() {
   return <TitleBar />;
 }

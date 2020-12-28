@@ -1,7 +1,7 @@
 import { Center, Grid, Heading, Text, Flex, Stack } from "@chakra-ui/react";
-import TitleBar from "../../compnents/TitleBar";
-import ContentCard from "../../compnents/ContentCard";
-import ProductCard from "../../compnents/ProductCard";
+import TitleBar from "../../components/TitleBar";
+import Link from "next/link";
+import ProductCard from "../../components/ProductCard";
 import useProducts from "../../hooks/useProducts";
 import useHeadbands from "../../hooks/useHeadbands";
 import { commerce } from "../../src/lib/commerce";
@@ -18,9 +18,9 @@ export default function ShopScrunchies() {
               textAlign="center"
               transform="translate(0, -2rem)"
             >
-              <Heading textStyle="h3">Shop Everything</Heading>
+              <Heading textStyle="h3">Shop Headbands</Heading>
               <Text textAlign="center" textStyle="p">
-                Our scrunchies are fucking great, buy some now. Seriously... Do
+                Our headbands are fucking great, buy some now. Seriously... Do
                 it.
               </Text>
             </Stack>
@@ -38,13 +38,17 @@ export default function ShopScrunchies() {
                 headbands.data.data.map(
                   ({ id, name, media: { source }, price: { formatted } }) => {
                     return (
-                      <Center mb={8}>
-                        <ProductCard
-                          name={name}
-                          imgSrc={source}
-                          price={formatted}
-                        />
-                      </Center>
+                      <Link href="/shop/[id.js]" as={`/shop/${id}`} key={id}>
+                        <a>
+                          <Center mb={8}>
+                            <ProductCard
+                              name={name}
+                              imgSrc={source}
+                              price={formatted}
+                            />
+                          </Center>
+                        </a>
+                      </Link>
                     );
                   }
                 )}

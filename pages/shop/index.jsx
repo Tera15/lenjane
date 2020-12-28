@@ -1,9 +1,9 @@
 import { Center, Grid, Heading, Text, Flex, Stack } from "@chakra-ui/react";
 import { QueryClient } from "react-query";
 import { dehydrate } from "react-query/hydration";
-import TitleBar from "../../compnents/TitleBar";
+import TitleBar from "../../components/TitleBar";
 import Link from "next/link";
-import ProductCard from "../../compnents/ProductCard";
+import ProductCard from "../../components/ProductCard";
 import useProducts from "../../hooks/useProducts";
 import { commerce } from "../../src/lib/commerce";
 export default function ShopAll() {

@@ -1,5 +1,5 @@
 import { Center, Stack, Heading, Text, Spacer } from "@chakra-ui/react";
-import Link from "next/Link";
+import Link from "next/link";
 export default function Blurb() {
   return (
     <Stack w="450px">

@@ -1,17 +1,14 @@
 import { Center, Icon, Grid, Flex, Stack } from "@chakra-ui/react";
-import TitleBar from "../compnents/TitleBar";
-import ContentCard from "../compnents/ContentCard";
-import Blurb from "../compnents/Blurb";
+import TitleBar from "../components/TitleBar";
+import ContentCard from "../components/ContentCard";
+import Blurb from "../components/Blurb";
 import {
   faInstagram,
   faPinterest,
   faTiktok,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Link from "next/link";
-import useCategory from "../hooks/useCategory";
 export default function Home() {
-  const categories = useCategory();
   return (
     <>
       <TitleBar />

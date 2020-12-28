@@ -12,9 +12,9 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import Image from "next/image";
-import TitleBar from "../compnents/TitleBar";
+import TitleBar from "./TitleBar";
 import ProductDescription from "./ProductDescription";
-import Blurb from "../compnents/Blurb";
+import Blurb from "./Blurb";
 import {
   faInstagram,
   faPinterest,
