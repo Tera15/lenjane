@@ -1,7 +1,17 @@
-import { Center, Grid, Heading, Text, Flex, Stack } from "@chakra-ui/react";
+import {
+  Center,
+  Grid,
+  Heading,
+  Text,
+  Flex,
+  Stack,
+  VStack,
+  Container,
+} from "@chakra-ui/react";
 import { QueryClient } from "react-query";
 import { dehydrate } from "react-query/hydration";
 import TitleBar from "../../components/TitleBar";
+import SocialWidget from "../../components/Socialwidget";
 import Link from "next/link";
 import ProductCard from "../../components/ProductCard";
 import useProducts from "../../hooks/useProducts";
@@ -21,8 +31,8 @@ export default function ShopAll() {
             >
               <Heading textStyle="h3">Shop Everything</Heading>
               <Text textAlign="center" textStyle="p">
-                Our scrunchies are fucking great, buy some now. Seriously... Do
-                it.
+                Shop all of our hand-finished products for a cute present to
+                yourself or someone you love!
               </Text>
             </Stack>
           </Center>
@@ -30,10 +40,10 @@ export default function ShopAll() {
             <Grid
               templateColumns="repeat( 3, minmax(400px, 1fr) )"
               w="80%"
-              h="599px"
               gridAutoFlow="column"
               overflowX="scroll"
               gridGap="5rem"
+              justifyItems="center"
             >
               {products.isSuccess &&
                 products.data.data.map(
@@ -56,6 +66,9 @@ export default function ShopAll() {
             </Grid>
           </Center>
         </Stack>
+        <Container position="absolute" transform="translate(0, 20rem)">
+          <SocialWidget />
+        </Container>
       </Flex>
     </>
   );

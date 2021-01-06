@@ -1,8 +1,16 @@
-import { Center, Grid, Heading, Text, Flex, Stack } from "@chakra-ui/react";
+import {
+  Center,
+  Grid,
+  Heading,
+  Text,
+  Flex,
+  Stack,
+  Container,
+} from "@chakra-ui/react";
 import TitleBar from "../../components/TitleBar";
 import Link from "next/link";
 import ProductCard from "../../components/ProductCard";
-import useProducts from "../../hooks/useProducts";
+import SocialWidget from "../../components/Socialwidget";
 import useHeadbands from "../../hooks/useHeadbands";
 import { commerce } from "../../src/lib/commerce";
 export default function ShopScrunchies() {
@@ -29,7 +37,6 @@ export default function ShopScrunchies() {
             <Grid
               templateColumns="repeat( 3, minmax(400px, 1fr) )"
               w="80%"
-              h="599px"
               gridAutoFlow="column"
               overflowX="scroll"
               gridGap="5rem"
@@ -55,6 +62,9 @@ export default function ShopScrunchies() {
             </Grid>
           </Center>
         </Stack>
+        <Container position="absolute" transform="translate(0, 20rem)">
+          <SocialWidget />
+        </Container>
       </Flex>
     </>
   );

@@ -4,13 +4,15 @@ import Link from "next/link";
 export default function ContentCard({ headband }) {
   return (
     <Stack h="450px" w="450px" spacing={5}>
-      <Image
-        src={`${
-          headband ? "/headbandPlacholder.jpeg" : "/scrunchydisplay.png"
-        }`}
-        width={494}
-        height={509}
-      />
+      <Container>
+        <Image
+          src={`${
+            headband ? "/headbandplacholder.jpg" : "/scrunchydisplay.jpg"
+          }`}
+          width={494}
+          height={509}
+        />
+      </Container>
       <Container borderTop="2px solid black" textAlign="center">
         <Link href={headband ? "/shop/headbands" : "/shop/scrunchies"}>
           <a>

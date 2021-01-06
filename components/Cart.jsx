@@ -16,7 +16,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import CartItem from "./CartItem";
-
+import useGetCheckoutUrl from "../hooks/useGetCheckoutUrl";
 import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -24,9 +24,10 @@ import useCart from "../hooks/useCart";
 
 export default function ShoppingBag() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const cartData = useGetCheckoutUrl();
+  console.log(cartData.isSuccess && cartData.data.hosted_checkout_url);
   const btnRef = useRef();
   const cart = useCart();
-  console.log(cart);
   const cartItems = cart.data;
   const cartTotal =
     cartItems &&
@@ -63,7 +64,7 @@ export default function ShoppingBag() {
                       id,
                       name,
                       media: { source },
-                      price: { formatted },
+                      line_total: { formatted },
                       quantity,
                     }) => {
                       return (
@@ -90,7 +91,11 @@ export default function ShoppingBag() {
                 background="none"
                 borderRadius="none"
               >
-                Proceed to Checkout
+                <a
+                  href={cartData.isSuccess && cartData.data.hosted_checkout_url}
+                >
+                  Proceed to checkout
+                </a>
               </Button>
             </DrawerFooter>
             <Text textAlign="center" textStyle="p" mb={4}>

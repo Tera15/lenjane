@@ -16,9 +16,6 @@ import {
 } from "@chakra-ui/react";
 import Image from "next/image";
 import TitleBar from "../../components/TitleBar";
-import CustomButton from "../../components/Button";
-import useAddToCart from "../../hooks/useAddToCart";
-
 export default function ProductPage({ product }) {
   const {
     id,

@@ -2,6 +2,7 @@ import { Center, Icon, Grid, Flex, Stack } from "@chakra-ui/react";
 import TitleBar from "../components/TitleBar";
 import ContentCard from "../components/ContentCard";
 import Blurb from "../components/Blurb";
+import SocialWidget from "../components/Socialwidget";
 import {
   faInstagram,
   faPinterest,
@@ -32,21 +33,7 @@ export default function Home() {
               </Center>
             </Grid>
           </Center>
-          <Center textStyle="menu">
-            <a
-              href="https://instagram.com/lennonjaneco"
-              target="_blank"
-              rel="noopener"
-            >
-              <Icon as={FontAwesomeIcon} icon={faInstagram} />
-            </a>
-            <a href="https://pinterest.com" target="_blank" rel="noopener">
-              <Icon as={FontAwesomeIcon} icon={faPinterest} mx={4} />
-            </a>
-            <a href="https://tiktok.com" target="_blank" rel="noopener">
-              <Icon as={FontAwesomeIcon} icon={faTiktok} />
-            </a>
-          </Center>
+          <SocialWidget />
         </Stack>
       </Flex>
     </>
