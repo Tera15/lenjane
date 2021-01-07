@@ -38,13 +38,23 @@ export default function ShoppingBag() {
 
   return (
     <>
-      <Button onClick={onOpen} background="transparent" fontSize={40}>
+      <Button
+        onClick={onOpen}
+        background="transparent"
+        fontSize={[20, 20, 30, 40]}
+      >
         <Icon as={FontAwesomeIcon} icon={faShoppingBag} />
       </Button>
       <Text
+        fontSize={["10px", "xs", "xs", "xs"]}
         position="absolute"
         color="background"
-        transform="translate(1.8rem, -1.5rem)"
+        transform={[
+          "translate(1.3rem, -1.5rem)",
+          "translate(1.9rem, -1.4rem)",
+          "translate(1.9rem, -1.4rem)",
+          "translate(1.9rem, -1.4rem)",
+        ]}
         fontWeight="bold"
       >
         {(cartItems && cartItems.length) || 0}

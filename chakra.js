@@ -10,7 +10,7 @@ const theme = extendTheme({
   },
   textStyles: {
     h1: {
-      fontSize: ["7xl"],
+      fontSize: ["2xl", "2xl", "5xl", "7xl"],
       fontWeight: "bold",
       textTransform: "uppercase",
       color: "headingText",
@@ -32,7 +32,7 @@ const theme = extendTheme({
       color: "bodyText",
     },
     menu: {
-      fontSize: ["3xl"],
+      fontSize: ["sm", "md", "xl", "3xl"],
       textTransform: "uppercase",
       color: "headingText",
       cursor: "pointer",

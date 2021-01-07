@@ -15,12 +15,12 @@ export default function Home() {
       <TitleBar />
       <Flex align="center" justify="center" w="100vw" minHeight="85vh">
         <Stack spacing={10}>
-          <Center>
+          <Center mt={[10, 10, 10, 0]}>
             <Grid
-              templateColumns="repeat( auto-fit, minmax(491px, 1fr) )"
-              h="599px"
+              templateColumns={["1fr", "1fr", "1fr", "1fr 1fr 1fr"]}
               width="85vw"
               justifySelf="center"
+              gap={20}
             >
               <Center>
                 <ContentCard />

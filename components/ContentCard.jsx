@@ -3,8 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 export default function ContentCard({ headband }) {
   return (
-    <Stack h="450px" w="450px" spacing={5}>
-      <Container>
+    <Stack spacing={5}>
+      <Container w={["80%", "80%", "80%", "440px"]}>
         <Image
           src={`${
             headband ? "/headbandplacholder.jpg" : "/scrunchydisplay.jpg"

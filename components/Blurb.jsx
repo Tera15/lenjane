@@ -2,8 +2,8 @@ import { Center, Stack, Heading, Text, Spacer, VStack } from "@chakra-ui/react";
 import Link from "next/link";
 export default function Blurb() {
   return (
-    <Stack w="440px">
-      <Stack my="3.5rem" spacing={5}>
+    <Stack w={["80%", "80%", "80%", "440px"]}>
+      <Stack my="0.5rem" spacing={8}>
         <Heading textStyle="h3">Ethically made. Hand finished.</Heading>
 
         <Text textStyle="p">

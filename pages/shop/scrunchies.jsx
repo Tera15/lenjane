@@ -23,9 +23,10 @@ export default function ShopScrunchies() {
         <Stack width="100%" spacing={10}>
           <Center>
             <Stack
-              position="absolute"
+              position={["relative", "relative", "relative", "absolute"]}
               textAlign="center"
-              transform="translate(0, -2rem)"
+              mt={[8, 8, 8, 0]}
+              transform={["", "", "", "translate(0, -2rem)"]}
             >
               <Heading textStyle="h3">Shop Scrunchies</Heading>
               <Text textAlign="center" textStyle="p">
@@ -36,10 +37,15 @@ export default function ShopScrunchies() {
           </Center>
           <Center>
             <Grid
-              templateColumns="repeat( 3, minmax(400px, 1fr) )"
+              templateColumns={[
+                "1fr",
+                "1fr",
+                "1fr",
+                "repeat( 3, minmax(400px, 1fr) )",
+              ]}
               w="80%"
-              gridAutoFlow="column"
-              overflowX="scroll"
+              gridAutoFlow={["row", "row", "row", "column"]}
+              overflowX={["scroll"]}
               gridGap="5rem"
             >
               {scrunchies.isSuccess &&
